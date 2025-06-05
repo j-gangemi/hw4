@@ -5,7 +5,7 @@
   <h4><%= entry["title"] %></h4>
   <h6> <%= entry["occurred_on"] %> </h6>
   <ul>
-    <li><%= entry["description"] %></li>
+    <p><%= entry["description"] %> </p>
   <% if entry.uploaded_image.attached? %>
     <img src="<%= url_for(entry.uploaded_image) %>" />
     </ul>
