@@ -4,11 +4,9 @@
 <% for entry in @entries %>
   <h4><%= entry["title"] %></h4>
   <h6> <%= entry["occurred_on"] %> </h6>
-  <ul>
-    <p><%= entry["description"] %> </p>
+  <p><%= entry["description"] %> </p>
   <% if entry.uploaded_image.attached? %>
-    <img src="<%= url_for(entry.uploaded_image) %>" />
-    </ul>
+    <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
   <% end %>
 <% end %>
 

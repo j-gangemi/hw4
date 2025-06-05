@@ -18,13 +18,19 @@
         <ul class="navbar-nav mb-2 mb-lg-0">
             <% @user = User.find_by({ "id" => session["user_id"] }) %>
             <% if @user == nil %>
-              <li class="nav-item"><a href="/users/new" class="nav-link">Sign Up</a></li>
-              <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+              <li class="nav-item"><a href="/users/new" class="btn btn-success">Sign Up</a></li>
+              <li class="nav-item"><a href="/login" class="btn btn-primary">Login</a></li>
             <% else %>
-              <li class="nav-text">Logged in as: <%= @user["username"] %></li>
-              <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+              <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                  <span class="navbar-text">
+                    Logged in as: <%= @user["username"] %>
+                  </span>
+                </div>
+              </nav>
+              <li class="nav-item"><a href="/logout" class="btn btn-secondary">Logout</a></li>
             <% end %>
-            <li class="nav-item"><a href="/places/new/" class="btn btn-success">New Place</a>
+            <li class="nav-item"><a href="/places/new/" class="btn btn-info">New Place</a>
         </li>
       </ul>
     </div>
