@@ -1,11 +1,13 @@
 <h1>Places</h1>
 
-<class="nav-item"> <a href="/places/new/" class="btn btn-info">New Place<a/>
+<a href="/places/new/" class="btn btn-info">New Place<a/>
 
 <p>
-  <ul>
-    <% for place in @places %>
-      <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
-    <% end %>
-  </ul>
+  <div class="d-flex flex-column">
+      <% for place in @places %>
+        <div class="mb-2">
+          <a href="/places/<%= place["id"] %>"><%= place["name"] %></a>
+        </div>
+      <% end %>
+  </div>
 </p>
